@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link rel="stylesheet" href="./styles/style.css" />
+    <title>Frontend Mentor | Interactive card details form</title>
+  </head>
+  <body>
+    <main class="main">
+      <section class="section-card">
+        <figure class="back-container back">
+          <p class="cvv">000</p>
+        </figure>
+        <figure class="front-container front">
+          <div class="heading">
+            <img src="./images/card-logo.svg" alt="" />
+          </div>
+          <div class="card-items">
+            <p class="card-number">0000 0000 0000 0000</p>
+            <div class="card-details">
+              <p class="name">Jane Appleseed</p>
+              <p class="date">00/00</p>
+            </div>
+          </div>
+        </figure>
+      </section>
+      <section id="section-form" class="section-form">
+        <form action="" class="form" id="form">
+          <div class="form__card--name">
+            <label for="name">Cardholder Name</label>
+            <input
+              class="input"
+              type="text"
+              name="name"
+              id="name"
+              placeholder="e.g. Jane Applseed"
+            />
+            <small>test</small>
+          </div>
+          <div class="form__card--number">
+            <label for="number">Card Number</label>
+            <input
+              class="input"
+              type="number"
+              name="number"
+              id="number"
+              placeholder="e.g. 1234 5678 9123 000"
+            />
+            <small></small>
+          </div>
+          <div class="form__card--date">
+            <div class="mm-container">
+              <label for="mm">mm</label>
+              <input
+                class="input"
+                type="text"
+                name="mm"
+                id="mm"
+                placeholder="MM"
+              />
+              <small></small>
+            </div>
+            <div class="yy-container">
+              <label for="yy">yy</label>
+              <input
+                class="input"
+                type="text"
+                name="yy"
+                id="yy"
+                placeholder="YY"
+              />
+              <small></small>
+            </div>
+            <div class="cvc-container">
+              <label for="cvc">cvc</label>
+              <input
+                class="input"
+                type="text"
+                name="cvc"
+                id="cvc"
+                placeholder="e.g. 123"
+              />
+              <small></small>
+            </div>
+          </div>
+          <button class="button">confirm</button>
+        </form>
+      </section>
+    </main>
+
+    <script src="./app.js" defer></script>
+  </body>
+</html>

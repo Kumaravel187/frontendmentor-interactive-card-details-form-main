@@ -1,0 +1,329 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+  list-style-type: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+  font-size: 100%;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 400;
+  background-color: white;
+  overflow: hidden;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+.main {
+  min-height: 100vh;
+  flex-direction: column;
+  display: flex;
+}
+.main .section-card {
+  flex: 1;
+  background-image: url("../images/bg-main-mobile.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: whitesmoke;
+  position: relative;
+  --width: 18rem;
+  --height: 10.5rem;
+}
+.main .section-card .front {
+  background-image: url("../images/bg-card-front.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  width: var(--width);
+  height: var(--height);
+  top: 100%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  border-radius: 0.4em;
+}
+.main .section-card .back {
+  background-image: url("../images/bg-card-back.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  width: var(--width);
+  height: var(--height);
+  top: 35%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  border-radius: 0.4em;
+}
+.main .section-card .front-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 0 1em;
+}
+.main .section-card .front-container .heading img {
+  height: 2em;
+}
+.main .section-card .front-container .card-items .card-number {
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  word-spacing: 1em;
+}
+.main .section-card .front-container .card-items .card-details {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+}
+.main .section-card .back-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main .section-card .back-container .cvv {
+  text-align: right;
+  width: 80%;
+  padding-bottom: 0.1em;
+}
+.main .section-card figure {
+  box-shadow: 20px 23px 12px -6px rgba(0, 0, 0, 0.1);
+}
+.main .section-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  background-color: white;
+  padding: 1.5em;
+}
+.main .section-form .form {
+  padding: 1.5em 0;
+  margin-top: 5em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.main .section-form .form__card--name, .main .section-form .form__card--number {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+}
+.main .section-form .form__card--name label, .main .section-form .form__card--number label {
+  color: hsl(278, 94%, 30%);
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  font-size: 0.85rem;
+}
+.main .section-form .form__card--name input, .main .section-form .form__card--number input {
+  width: 100%;
+  padding: 0.35em 0.75em;
+  border: 0.09em solid hsl(270, 3%, 87%);
+}
+.main .section-form .form__card--name input::-moz-placeholder, .main .section-form .form__card--number input::-moz-placeholder {
+  color: hsl(279, 6%, 55%);
+}
+.main .section-form .form__card--name input::placeholder, .main .section-form .form__card--number input::placeholder {
+  color: hsl(279, 6%, 55%);
+}
+.main .section-form .form__card--name small, .main .section-form .form__card--number small {
+  font-size: 0.75rem;
+  visibility: hidden;
+}
+.main .section-form .form__card--name .decline, .main .section-form .form__card--number .decline {
+  color: hsl(0, 100%, 66%);
+}
+.main .section-form .form__card--name .accept, .main .section-form .form__card--number .accept {
+  color: lightgreen;
+}
+.main .section-form .form__card--date {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.25em;
+}
+.main .section-form .form__card--date label {
+  color: hsl(278, 94%, 30%);
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  font-size: 0.85rem;
+}
+.main .section-form .form__card--date input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.35em 0.25em;
+  border: 0.09em solid hsl(270, 3%, 87%);
+}
+.main .section-form .form__card--date input::-moz-placeholder {
+  color: hsl(279, 6%, 55%);
+}
+.main .section-form .form__card--date input::placeholder {
+  color: hsl(279, 6%, 55%);
+}
+.main .section-form .form__card--date small {
+  font-size: 0.75rem;
+  visibility: hidden;
+}
+.main .section-form .form__card--date .decline {
+  color: hsl(0, 100%, 66%);
+}
+.main .section-form .form__card--date .accept {
+  color: lightgreen;
+}
+.main .section-form .form__card--date .mm-container,
+.main .section-form .form__card--date .yy-container {
+  width: 30%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+}
+.main .section-form .form__card--date .cvc-container {
+  width: 60%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+}
+.main .section-form .form .button {
+  padding: 0.75em;
+  background-color: hsl(278, 68%, 11%);
+  border: none;
+  text-transform: capitalize;
+  letter-spacing: 0.04em;
+  border-radius: 0.5em;
+  color: whitesmoke;
+}
+.main .section-form__img {
+  width: 5em;
+  margin: 1.5em 0 1.25em 0;
+}
+.main .section-form__header {
+  font-size: 2rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.main .section-form__info {
+  color: hsl(279, 6%, 55%);
+  padding-bottom: 0.1em;
+  margin-bottom: 1.5em;
+}
+.main .section-form__continue {
+  padding: 0.75em;
+  width: 100%;
+  background-color: hsl(278, 68%, 11%);
+  border: none;
+  text-transform: capitalize;
+  letter-spacing: 0.04em;
+  border-radius: 0.5em;
+  color: whitesmoke;
+}
+
+@media (min-width: 48rem) {
+  .main {
+    flex-direction: row;
+  }
+  .main .section-card {
+    flex: 1.2;
+    background-image: url("../images/bg-main-desktop.png");
+    --width: 18.5rem;
+    --height: 11rem;
+    z-index: 999;
+  }
+  .main .section-card .front {
+    top: 40%;
+    left: 85%;
+  }
+  .main .section-card .back {
+    top: 70%;
+    left: 105%;
+  }
+  .main .section-card .front-container .card-items .card-number {
+    font-size: 1.05rem;
+  }
+  .main .section-card .back-container .cvv {
+    width: 84%;
+  }
+  .main .section-form {
+    flex: 2.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(1em);
+  }
+  .main .section-form .form {
+    padding: 0;
+    max-width: 50%;
+    transform: translateX(3.5em);
+  }
+  .main .section-form__continue {
+    width: 50%;
+  }
+}
+@media (min-width: 65rem) {
+  .main .section-card {
+    flex: 1.5;
+  }
+}/*# sourceMappingURL=style.css.map */

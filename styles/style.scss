@@ -1,0 +1,311 @@
+@import "./globals";
+
+.main {
+  //   width: 100%;
+  min-height: 100vh;
+  flex-direction: column;
+  display: flex;
+
+  .section-card {
+    flex: 1;
+    background-image: url("../images/bg-main-mobile.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: whitesmoke;
+    position: relative;
+    --width: 18rem;
+    --height: 10.5rem;
+
+    .front {
+      background-image: url("../images/bg-card-front.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      position: absolute;
+      width: var(--width);
+      height: var(--height);
+      top: 100%;
+      left: 45%;
+      transform: translate(-50%, -50%);
+      border-radius: 0.4em;
+    }
+
+    .back {
+      background-image: url("../images/bg-card-back.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      position: absolute;
+      width: var(--width);
+      height: var(--height);
+      top: 35%;
+      left: 55%;
+      transform: translate(-50%, -50%);
+      border-radius: 0.4em;
+    }
+
+    .front-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      padding: 0 1em;
+
+      .heading {
+        // border: 1px solid white;
+        img {
+          height: 2em;
+        }
+      }
+
+      .card-items {
+        // border: 1px solid white;
+
+        .card-number {
+          //   border: 1px solid white;
+          font-size: 1rem;
+          letter-spacing: 0.08em;
+          word-spacing: 1em;
+        }
+
+        .card-details {
+          display: flex;
+          justify-content: space-between;
+          font-size: 0.8rem;
+        }
+      }
+    }
+
+    .back-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .cvv {
+        text-align: right;
+        width: 80%;
+        padding-bottom: 0.1em;
+      }
+    }
+
+    figure {
+      box-shadow: 20px 23px 12px -6px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .section-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // border: 1px solid red;
+    flex: 1;
+    background-color: white;
+    // border: 1px solid red;
+    padding: 1.5em;
+
+    .form {
+      padding: 1.5em 0;
+      margin-top: 5em;
+      //   border: 1px solid black;
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+
+      &__card {
+        &--name,
+        &--number {
+          display: flex;
+          flex-direction: column;
+          gap: 0.25em;
+          label {
+            color: hsl(278, 94%, 30%);
+            text-transform: uppercase;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            font-size: 0.85rem;
+          }
+          input {
+            width: 100%;
+            padding: 0.35em 0.75em;
+            border: 0.09em solid hsl(270, 3%, 87%);
+            &::placeholder {
+              color: hsl(279, 6%, 55%);
+            }
+          }
+          small {
+            font-size: 0.75rem;
+            visibility: hidden;
+          }
+
+          .decline {
+            color: hsl(0, 100%, 66%);
+          }
+          .accept {
+            color: lightgreen;
+          }
+        }
+
+        &--date {
+          display: flex;
+          justify-content: space-between;
+          gap: 0.25em;
+          label {
+            color: hsl(278, 94%, 30%);
+            text-transform: uppercase;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            font-size: 0.85rem;
+          }
+
+          input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 0.35em 0.25em;
+            border: 0.09em solid hsl(270, 3%, 87%);
+
+            &::placeholder {
+              color: hsl(279, 6%, 55%);
+            }
+          }
+
+          small {
+            font-size: 0.75rem;
+            visibility: hidden;
+          }
+
+          .decline {
+            color: hsl(0, 100%, 66%);
+          }
+          .accept {
+            color: lightgreen;
+          }
+
+          .mm-container,
+          .yy-container {
+            width: 30%;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            gap: 0.25em;
+          }
+
+          .cvc-container {
+            width: 60%;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            gap: 0.25em;
+          }
+        }
+      }
+
+      .button {
+        padding: 0.75em;
+        background-color: hsl(278, 68%, 11%);
+        border: none;
+        text-transform: capitalize;
+        letter-spacing: 0.04em;
+        border-radius: 0.5em;
+        color: whitesmoke;
+      }
+    }
+
+    &__img {
+      width: 5em;
+      margin: 1.5em 0 1.25em 0;
+    }
+
+    &__header {
+      font-size: 2rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    &__info {
+      color: hsl(279, 6%, 55%);
+      padding-bottom: 0.1em;
+      margin-bottom: 1.5em;
+    }
+
+    &__continue {
+      padding: 0.75em;
+      width: 100%;
+      background-color: hsl(278, 68%, 11%);
+      border: none;
+      text-transform: capitalize;
+      letter-spacing: 0.04em;
+      border-radius: 0.5em;
+      color: whitesmoke;
+    }
+  }
+}
+
+@media (min-width: 48rem) {
+  .main {
+    flex-direction: row;
+
+    .section-card {
+      flex: 1.2;
+      background-image: url("../images/bg-main-desktop.png");
+      --width: 18.5rem;
+      --height: 11rem;
+      z-index: 999;
+      .front {
+        top: 40%;
+        left: 85%;
+      }
+
+      .back {
+        top: 70%;
+        left: 105%;
+      }
+
+      .front-container {
+        .card-items {
+          .card-number {
+            //   border: 1px solid white;
+            font-size: 1.05rem;
+          }
+        }
+      }
+
+      .back-container {
+        .cvv {
+          width: 84%;
+        }
+      }
+    }
+
+    .section-form {
+      flex: 2.5;
+      //   border: 1px solid red;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform: translateX(1em);
+      // z-index: -1;
+
+      .form {
+        padding: 0;
+        // border: 1px solid black;
+        max-width: 50%;
+        transform: translateX(3.5em);
+      }
+
+      &__continue {
+        width: 50%;
+      }
+    }
+  }
+}
+
+@media (min-width: 65rem) {
+  .main {
+    .section-card {
+      flex: 1.5;
+    }
+    .section-form {
+    }
+  }
+}
